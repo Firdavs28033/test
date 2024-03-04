@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% for post in posts %}
+
+    <h1><a href="{% url "detail" post.pk %}">{{post.title}}</a> - {{post.created_at}}</h1>
+    <p>{{post.content}}</p>
+
+
+{% endfor %}
+
+{% endblock content %}
