@@ -5,15 +5,10 @@
 </head>
 
 <body>
-    <div id="content" name="content">
-	{% block content %}
-	{% endblock %}
-    </div>
 
-
-<nav>
-    <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
-        <input name="next" type="hidden" value="{{ redirect_to }}">
+    
+    <<form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+        <input name="" type="hidden" value="{{ redirect_to }}">
         <select name="language">
             {% get_current_language as LANGUAGE_CODE %}
             {% get_available_languages as LANGUAGES %}
@@ -26,7 +21,8 @@
         </select>
         <input type="submit" value="Go">
     </form>
-</nav>
-
+    
+{% block content %}
+	{% endblock %}
 </body>
 </html>
